@@ -65,6 +65,11 @@ public class TwinStickMovement : MonoBehaviour
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            //rb_player.AddForce(100750f * rb_player.transform.right, ForceMode.Impulse);
+        }
     }
 
     void HandleRotation()

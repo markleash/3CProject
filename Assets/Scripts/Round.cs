@@ -5,14 +5,25 @@ using UnityEngine;
 public class Round : MonoBehaviour
 {
     public float damage;
+    public float enemyDamage;
+    
+    
+    void OnCollisionEnter(Collision collision) 
+    {
+        GameObject collisionObject = collision.gameObject ;
+        if (collisionObject.tag == "Level")
+        {
+            Destroy(gameObject);
+        }
 
-    void OnCollisionEnter(Collision other) {
-        Target target = other.gameObject.GetComponent<Target>();
-        // Only attempts to inflict damage if the other game object has
-        // the 'Target' component
-        if(target != null) {
-            target.Hit(damage);
-            Destroy(gameObject); // Deletes the round
+        if (collisionObject.tag == "Player")
+        {
+            collisionObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+        }
+        
+        else if (collisionObject.tag == "Enemy")
+        {
+            collisionObject.GetComponent<EnemyHealth>().TakeDamage(enemyDamage);
         }
     }
 }

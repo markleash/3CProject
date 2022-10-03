@@ -12,6 +12,7 @@ public class Gun : MonoBehaviour
 
     // How far forward the muzzle is from the centre of the gun
     private float muzzleOffset;
+    public GameObject shootingPosition;
 
     [Header("Magazine")]
     public GameObject round;
@@ -40,7 +41,7 @@ public class Gun : MonoBehaviour
     private float nextShootTime = 0;
 
     void Start() {
-        muzzleOffset = GetComponent<Renderer>().bounds.extents.z;
+        //muzzleOffset = GetComponent<Renderer>().bounds.extents.z;
         remainingAmmunition = ammunition;
     }
 
