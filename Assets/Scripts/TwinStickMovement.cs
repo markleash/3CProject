@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
@@ -11,7 +13,7 @@ using UnityEngine.InputSystem;
 public class TwinStickMovement : MonoBehaviour
 {
     [SerializeField] private float playerSpeed = 5f;
-    [SerializeField] private float gravityValue = -9.81f;
+    [SerializeField] private float gravityValue = -2f;
     [SerializeField] private float controllerDeadzone = 0.1f;
     [SerializeField] private float gamepadRotateSmoothing = 1000f;
 
@@ -19,6 +21,8 @@ public class TwinStickMovement : MonoBehaviour
 
     private CharacterController controller;
 
+    [SerializeField] private Rigidbody rbPlayer;
+    [SerializeField] private GameObject player;
     private Vector2 movement;
     private Vector2 aim;
 
@@ -26,6 +30,14 @@ public class TwinStickMovement : MonoBehaviour
 
     private PlayerControls playerControls;
     private PlayerInput playerInput;
+
+    private float dodgeTime = 30f;
+    private float dodgeLength = 20f;
+    private bool canDodge = true;
+    [SerializeField] private float dodgeSpeed = 50f;
+
+    public float dashSpeed;
+    public float dashTime;
     
     private void Awake()
     {
@@ -44,18 +56,18 @@ public class TwinStickMovement : MonoBehaviour
         playerControls.Disable();
     }
 
-    
     void Update()
     {
         HandleInput();
         HandleMovement();
         HandleRotation();
     }
-
+    
     void HandleInput()
     {
         movement = playerControls.Controls.Movement.ReadValue<Vector2>();
         aim = playerControls.Controls.Aim.ReadValue<Vector2>();
+        
     }
 
     void HandleMovement()
@@ -65,11 +77,42 @@ public class TwinStickMovement : MonoBehaviour
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        
+    }
+    public void DodgeAction()
+    {
+        if (canDodge == true)
         {
-            //rb_player.AddForce(100750f * rb_player.transform.right, ForceMode.Impulse);
+            StartCoroutine(DodgeTimer());
         }
+    }
+    
+    void OnDodge(InputValue Dodge)
+    {
+        if (Dodge.isPressed )
+        {
+            DodgeAction();
+        }
+    }
+    
+    private IEnumerator DodgeTimer()
+    {
+        Debug.Log("DodgeAction");
+
+        // Only problem with this: It dashes towards location you're facing, not the location you're moving
+        
+        float startTime = Time.time;
+        while (Time.time < startTime + dashTime)
+        {
+            transform.Translate(Vector3.forward * dodgeSpeed);
+            yield return null;
+        }
+        yield return new WaitForSeconds(0.1f);
+        canDodge = false;
+        yield return new WaitForSeconds(2f);
+        canDodge = true;    
+          
+        
     }
 
     void HandleRotation()

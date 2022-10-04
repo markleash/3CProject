@@ -62,6 +62,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dodge"",
+                    ""type"": ""Button"",
+                    ""id"": ""6882b02e-6ecf-4276-b780-202baaf2befd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -196,6 +205,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Reload"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ae5ec2a2-7bca-4cbe-aed3-a111f1fc6ebe"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Dodge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""589ed14d-4e48-4166-bc87-f227cbce64fe"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Dodge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -236,6 +267,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Controls_Aim = m_Controls.FindAction("Aim", throwIfNotFound: true);
         m_Controls_Shoot = m_Controls.FindAction("Shoot", throwIfNotFound: true);
         m_Controls_Reload = m_Controls.FindAction("Reload", throwIfNotFound: true);
+        m_Controls_Dodge = m_Controls.FindAction("Dodge", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -299,6 +331,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Controls_Aim;
     private readonly InputAction m_Controls_Shoot;
     private readonly InputAction m_Controls_Reload;
+    private readonly InputAction m_Controls_Dodge;
     public struct ControlsActions
     {
         private @PlayerControls m_Wrapper;
@@ -307,6 +340,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Aim => m_Wrapper.m_Controls_Aim;
         public InputAction @Shoot => m_Wrapper.m_Controls_Shoot;
         public InputAction @Reload => m_Wrapper.m_Controls_Reload;
+        public InputAction @Dodge => m_Wrapper.m_Controls_Dodge;
         public InputActionMap Get() { return m_Wrapper.m_Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -328,6 +362,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Reload.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnReload;
                 @Reload.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnReload;
                 @Reload.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnReload;
+                @Dodge.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnDodge;
+                @Dodge.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnDodge;
+                @Dodge.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnDodge;
             }
             m_Wrapper.m_ControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -344,6 +381,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Reload.started += instance.OnReload;
                 @Reload.performed += instance.OnReload;
                 @Reload.canceled += instance.OnReload;
+                @Dodge.started += instance.OnDodge;
+                @Dodge.performed += instance.OnDodge;
+                @Dodge.canceled += instance.OnDodge;
             }
         }
     }
@@ -372,5 +412,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnAim(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
+        void OnDodge(InputAction.CallbackContext context);
     }
 }

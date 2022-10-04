@@ -8,6 +8,7 @@ public class CharacterShooting : MonoBehaviour
     public PlayerControls playerControls;
     public Gun gun;
     public InputAction fireValue;
+    public TwinStickMovement movement;
 
     /*void Update() {
   
@@ -39,5 +40,4 @@ public class CharacterShooting : MonoBehaviour
             gun.Reload();
         }
     }
-
 }
