@@ -31,12 +31,11 @@ public class TwinStickMovement : MonoBehaviour
     private PlayerControls playerControls;
     private PlayerInput playerInput;
 
-    private float dodgeTime = 30f;
-    private float dodgeLength = 20f;
+
     private bool canDodge = true;
     [SerializeField] private float dodgeSpeed = 50f;
 
-    public float dashSpeed;
+
     public float dashTime;
     
     private void Awake()
@@ -65,6 +64,7 @@ public class TwinStickMovement : MonoBehaviour
     
     void HandleInput()
     {
+        
         movement = playerControls.Controls.Movement.ReadValue<Vector2>();
         aim = playerControls.Controls.Aim.ReadValue<Vector2>();
         
@@ -95,16 +95,15 @@ public class TwinStickMovement : MonoBehaviour
         }
     }
     
-    private IEnumerator DodgeTimer()
+    public IEnumerator DodgeTimer()
     {
         Debug.Log("DodgeAction");
-
-        // Only problem with this: It dashes towards location you're facing, not the location you're moving
+        
         
         float startTime = Time.time;
         while (Time.time < startTime + dashTime)
         {
-            transform.Translate(Vector3.forward * dodgeSpeed);
+            transform.Translate(new Vector3(movement.x, 0, movement.y) * dodgeSpeed, Space.World);
             yield return null;
         }
         yield return new WaitForSeconds(0.1f);
@@ -152,6 +151,5 @@ public class TwinStickMovement : MonoBehaviour
     {
         isGamepad = pi.currentControlScheme.Equals("Gamepad") ? true : false;
     }
-    
     
 }
