@@ -209,6 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4047f9c2a57bb54cb3339b504d96cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootingPosition: {fileID: 0}
   round: {fileID: 5984997620845726449, guid: bbd0dd27d7c063940909ec5e365cedae, type: 3}
   ammunition: 10
   reloadTime: 2.06
@@ -449,6 +450,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 5529611688560523893}
+  fireValue:
+    m_Name: Fire Value
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5896b450-378d-4a3d-ae4d-e328358548b5
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!64 &5529611689466208613
 MeshCollider:
   m_ObjectHideFlags: 0
