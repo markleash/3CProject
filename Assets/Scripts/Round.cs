@@ -19,11 +19,13 @@ public class Round : MonoBehaviour
         if (collisionObject.tag == "Player")
         {
             collisionObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+            Destroy(gameObject);
         }
         
         else if (collisionObject.tag == "Enemy")
         {
             collisionObject.GetComponent<EnemyHealth>().TakeDamage(enemyDamage);
+            Destroy(gameObject);
         }
     }
 }

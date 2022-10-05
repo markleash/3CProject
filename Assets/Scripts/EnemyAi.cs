@@ -7,7 +7,6 @@ public class EnemyAi : MonoBehaviour
     public NavMeshAgent agent;
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
-    public float health;
     [SerializeField] private GameObject roundPrefab;
     public Gun gun;
 
@@ -94,12 +93,7 @@ public class EnemyAi : MonoBehaviour
         alreadyAttacked = false;
     }
 
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-
-        if (health <= 0) Invoke(nameof(DestroyEnemy), 0.5f);
-    }
+ 
     private void DestroyEnemy()
     {
         Destroy(gameObject);
