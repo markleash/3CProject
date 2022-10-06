@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] int hitPoints = 300;
     public int currentHealth;
     public HealthBar healthBar;
-    
+   
 
     private void Start()
     {
@@ -27,6 +27,16 @@ public class PlayerHealth : MonoBehaviour
         {
             Destroy(gameObject);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Death/Death");
+        }
+    }
+
+    public void GainHealth(int health)
+    {
+        hitPoints += health;
+        healthBar.SetHealth(hitPoints);
+        if (hitPoints >= 300)
+        {
+            hitPoints = 300;
         }
     }
 }

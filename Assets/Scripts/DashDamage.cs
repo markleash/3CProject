@@ -14,8 +14,8 @@ public class DashDamage : MonoBehaviour
    [SerializeField] private Rigidbody enemyRb;
    private NavMeshAgent enemyNav;
    private bool alreadyDamaged = false;
-   
-
+   [SerializeField] private GameObject playerHealth;
+   public int gainHealth = 25;
    private void Start()
    {
       this.enabled = false;
@@ -34,7 +34,7 @@ public class DashDamage : MonoBehaviour
       if (enemyObject.tag == "Enemy" && player.isDodging && !alreadyDamaged)
       {
          enemyObject.GetComponent<EnemyHealth>().TakeDamage(damage);
-         
+         playerHealth.GetComponent<PlayerHealth>().GainHealth(gainHealth);
          
          // This is the code for the knockback effect that didn't fully work.
          //enemyNav = enemyObject.GetComponent<NavMeshAgent>();

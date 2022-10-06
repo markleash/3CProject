@@ -13,8 +13,10 @@ public class EnemyHealth : MonoBehaviour
     {
         hitPoints -= damage;
         particles.Play();
+        
         if (hitPoints <= 0)
         {
+            
             deathParticles.Play();
             FMODUnity.RuntimeManager.PlayOneShot("event:/Enemy/Death/Death");
             Destroy(gameObject);

@@ -77,7 +77,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{eae544c9-375b-42b4-b4f1-78d937327181}">
 		<property name="volume">
-			<value>-6.5</value>
+			<value>-11.5</value>
 		</property>
 		<property name="pitch">
 			<value>7</value>
@@ -204,7 +204,7 @@
 	<object class="MixerBusFader" id="{b5c2bb11-7c60-4437-b010-6ea578ee5735}" />
 	<object class="SpatialiserEffect" id="{172a5459-92e3-46d2-bf50-d6fbf31a4b4c}">
 		<property name="panBlend">
-			<value>0</value>
+			<value>0.359999985</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{8fe20916-d2e2-4f65-83f2-052880f9cc78}">
