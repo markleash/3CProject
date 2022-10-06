@@ -223,6 +223,7 @@ MonoBehaviour:
     m_Bits: 64
   roundPrefab: {fileID: 5984997620845726449, guid: bbd0dd27d7c063940909ec5e365cedae,
     type: 3}
+  hit: {fileID: 6189123125403935662, guid: 413195d0ccac5df428b559753d852e4c, type: 3}
   gun: {fileID: 8124421004500282303}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5

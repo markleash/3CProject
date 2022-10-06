@@ -10,7 +10,7 @@ public class Rotate : MonoBehaviour
     //This will simulate a rotation animation
     void Update()
     {
-        transform.Rotate(new Vector3(0f, 0f, 100f) * Time.deltaTime);
+        transform.Rotate(new Vector3(0f, 0f, 300f) * Time.deltaTime);
 
     }
 }

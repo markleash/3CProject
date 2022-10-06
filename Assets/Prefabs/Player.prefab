@@ -577,3 +577,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 100
+  hit: {fileID: 6189123125403935662, guid: 413195d0ccac5df428b559753d852e4c, type: 3}
