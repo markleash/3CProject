@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a5f567de-28f0-44f9-8c90-6250992be0de}">
+		<property name="assetPath">
+			<value>Game Punch 7.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.38934240362811789</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f806e69b-26d4-476f-a4e5-94e2187261fa}</destination>
+		</relationship>
+	</object>
+</objects>

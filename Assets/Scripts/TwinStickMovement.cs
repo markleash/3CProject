@@ -20,9 +20,7 @@ public class TwinStickMovement : MonoBehaviour
     [SerializeField] private bool isGamepad;
 
     private CharacterController controller;
-
-    [SerializeField] private Rigidbody rbPlayer;
-    [SerializeField] private GameObject player;
+    
     private Vector2 movement;
     private Vector2 aim;
 
@@ -104,6 +102,7 @@ public class TwinStickMovement : MonoBehaviour
         {
             transform.Translate(new Vector3(movement.x, 0, movement.y) * dodgeSpeed, Space.World);
             yield return null;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Dash/Dash");
         }
         isDodging = false;
         yield return new WaitForSeconds(0.1f);

@@ -74,6 +74,7 @@ public class Gun : MonoBehaviour
                     transform.position + transform.up * muzzleOffset,
                     transform.rotation
                 );
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Shoot/Shoot");
 
                 // Add a random variation to the round's direction
                 spawnedRound.transform.Rotate(new Vector3(
@@ -102,6 +103,7 @@ public class Gun : MonoBehaviour
         if(shootState == ShootState.Ready) {
             nextShootTime = Time.time + reloadTime;
             shootState = ShootState.Reloading;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Reload/Reload");
         }
     }
 }

@@ -34,13 +34,18 @@ public class DashDamage : MonoBehaviour
       if (enemyObject.tag == "Enemy" && player.isDodging && !alreadyDamaged)
       {
          enemyObject.GetComponent<EnemyHealth>().TakeDamage(damage);
-         enemyNav = enemyObject.GetComponent<NavMeshAgent>();
-         enemyNav.enabled = false;
-         enemyRb.constraints = RigidbodyConstraints.None;
-         Knockback(enemyObject);
-         StartCoroutine(KnockbackCD());
-         enemyRb.constraints = RigidbodyConstraints.FreezeAll;
-         enemyNav.enabled = true;
+         
+         
+         // This is the code for the knockback effect that didn't fully work.
+         //enemyNav = enemyObject.GetComponent<NavMeshAgent>();
+         //enemyNav.enabled = false;
+         //enemyRb.constraints = RigidbodyConstraints.None;
+         //Knockback(enemyObject);
+         //StartCoroutine(KnockbackCD());
+         //enemyRb.constraints = RigidbodyConstraints.FreezeAll;
+         //enemyNav.enabled = true;
+         
+         FMODUnity.RuntimeManager.PlayOneShot("event:/Enemy/Dash Hit/Dash Hit");
          alreadyDamaged = true;
       }
    }

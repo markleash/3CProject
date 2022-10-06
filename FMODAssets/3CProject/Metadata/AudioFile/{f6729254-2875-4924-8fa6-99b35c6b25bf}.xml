@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f6729254-2875-4924-8fa6-99b35c6b25bf}">
+		<property name="assetPath">
+			<value>Silenced Pistol 5.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.8461451247165532</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f806e69b-26d4-476f-a4e5-94e2187261fa}</destination>
+		</relationship>
+	</object>
+</objects>

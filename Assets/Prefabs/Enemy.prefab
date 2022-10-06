@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 8124421004120652657}
-  player: {fileID: 0}
+  player: {fileID: 5529611689466208608, guid: e8c2e9468a3aa90448b612c944fd2579, type: 3}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
@@ -223,14 +223,14 @@ MonoBehaviour:
     m_Bits: 64
   roundPrefab: {fileID: 5984997620845726449, guid: bbd0dd27d7c063940909ec5e365cedae,
     type: 3}
-  gun: {fileID: 8124421004500282303}
+  gun: {fileID: 3285774310185636044}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   timeBetweenAttacks: 0.5
   projectile: {fileID: 5984997620845726449, guid: bbd0dd27d7c063940909ec5e365cedae,
     type: 3}
   sightRange: 20
-  attackRange: 2
+  attackRange: 6
   playerInSightRange: 0
   playerInAttackRange: 0
 --- !u!195 &8124421004120652657
@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 8124421004500282274}
   - component: {fileID: 8124421004500282301}
   - component: {fileID: 8124421004500282300}
-  - component: {fileID: 8124421004500282303}
+  - component: {fileID: 3285774310185636044}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -481,7 +481,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &8124421004500282303
+--- !u!114 &3285774310185636044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -490,14 +490,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8124421004500282302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4047f9c2a57bb54cb3339b504d96cf1, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a795fe44686a3b4092fbd405b7f9715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shootingPosition: {fileID: 8124421003737825417}
   round: {fileID: 5984997620845726449, guid: bbd0dd27d7c063940909ec5e365cedae, type: 3}
   ammunition: 10
-  reloadTime: 2.06
-  fireRate: 4.3
+  reloadTime: 2.09
+  fireRate: 4.5
   roundsPerShot: 1
-  roundSpeed: 21.2
-  maxRoundVariation: 3.1
+  roundSpeed: 17.2
+  maxRoundVariation: 3.6

@@ -5,11 +5,8 @@ using UnityEngine.InputSystem;
 
 public class CharacterShooting : MonoBehaviour
 {
-    public PlayerControls playerControls;
     public Gun gun;
-    public InputAction fireValue;
-    public TwinStickMovement movement;
-    
+
     void OnShoot(InputValue Shoot)
     {
         if (Shoot.isPressed)

@@ -7,19 +7,23 @@ public class KnockBackTrigger : MonoBehaviour
 {
 
     [SerializeField] private float knockbackStrenght;
-    
+    private Vector3 pushDirection;
+    [SerializeField] private CharacterController controller;
     
     private void OnCollisionEnter(Collision collision)
     {
-        Rigidbody rb = collision.collider.GetComponent<Rigidbody>();
+        GameObject collisionObject = collision.gameObject;
 
-        if(rb != null)
+        if(collisionObject.tag == "Player")
         {
-            Vector3 dir = collision.transform.position - transform.position;
+            Debug.Log("Hit");
+            /*Vector3 dir = collision.transform.position - transform.position;
 
             dir.y = 0;
 
-            rb.AddForce(dir.normalized * knockbackStrenght, ForceMode.Impulse);
+            rb.AddForce(dir.normalized * knockbackStrenght, ForceMode.Impulse);*/
+            
+          
         }
     
     

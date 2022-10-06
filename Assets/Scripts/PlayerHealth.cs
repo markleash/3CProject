@@ -10,9 +10,11 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         hitPoints -= damage;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Damage/Damage");
         if (hitPoints <= 0)
         {
             Destroy(gameObject);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Death/Death");
         }
     }
 }

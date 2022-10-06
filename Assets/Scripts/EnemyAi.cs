@@ -8,7 +8,7 @@ public class EnemyAi : MonoBehaviour
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
     [SerializeField] private GameObject roundPrefab;
-    public Gun gun;
+    public EnemyGun gun;
 
     //Patroling
     public Vector3 walkPoint;

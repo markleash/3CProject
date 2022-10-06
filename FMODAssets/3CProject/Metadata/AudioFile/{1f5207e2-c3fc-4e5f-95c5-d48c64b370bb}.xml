@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1f5207e2-c3fc-4e5f-95c5-d48c64b370bb}">
+		<property name="assetPath">
+			<value>Head exploding 5.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.49467120181405894</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f806e69b-26d4-476f-a4e5-94e2187261fa}</destination>
+		</relationship>
+	</object>
+</objects>

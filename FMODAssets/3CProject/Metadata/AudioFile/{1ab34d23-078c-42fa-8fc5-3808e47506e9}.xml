@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1ab34d23-078c-42fa-8fc5-3808e47506e9}">
+		<property name="assetPath">
+			<value>Hurt Grunts-002.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.6426530612244898</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f806e69b-26d4-476f-a4e5-94e2187261fa}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour
         hitPoints -= damage;
         if (hitPoints <= 0)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Enemy/Death/Death");
             Destroy(gameObject);
         }
     }
