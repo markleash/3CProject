@@ -34,6 +34,7 @@ public class TwinStickMovement : MonoBehaviour
 
     private bool canDodge = true;
     [SerializeField] private float dodgeSpeed = 50f;
+    public bool isDodging;
 
 
     public float dashTime;
@@ -97,17 +98,17 @@ public class TwinStickMovement : MonoBehaviour
     
     public IEnumerator DodgeTimer()
     {
-        Debug.Log("DodgeAction");
-        
-        
+        isDodging = true;
         float startTime = Time.time;
         while (Time.time < startTime + dashTime)
         {
             transform.Translate(new Vector3(movement.x, 0, movement.y) * dodgeSpeed, Space.World);
             yield return null;
         }
+        isDodging = false;
         yield return new WaitForSeconds(0.1f);
         canDodge = false;
+        
         yield return new WaitForSeconds(2f);
         canDodge = true;    
           
