@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Round : MonoBehaviour
 {
+    
     public float damage;
     public float enemyDamage;
+
     
     
     void OnCollisionEnter(Collision collision) 
@@ -19,6 +21,8 @@ public class Round : MonoBehaviour
         if (collisionObject.tag == "Player")
         {
             collisionObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+
+
             Destroy(gameObject);
         }
         
