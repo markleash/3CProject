@@ -5,7 +5,7 @@ using UnityEngine;
 public class Round : MonoBehaviour
 {
     
-    public float damage;
+    public int damage;
     public float enemyDamage;
 
     

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1919288783811419164}
   - component: {fileID: 9198390750936536703}
   - component: {fileID: 2381752300420901758}
-  - component: {fileID: 6081029675107089728}
   m_Layer: 0
   m_Name: PlaneWithHole
   m_TagString: Untagged
@@ -113,16 +112,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.3795834, y: 2.0579667, z: 2.4002893}
   m_Center: {x: 0.0032753944, y: 0.9943456, z: 0.0020469427}
---- !u!114 &6081029675107089728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117747296461340105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5214d34a293ddf548bc2c0061894ed67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 8124421004120652662, guid: 627ccce1ef4b9904bacfb004591b2530, type: 3}

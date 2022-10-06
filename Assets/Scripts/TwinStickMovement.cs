@@ -108,7 +108,7 @@ public class TwinStickMovement : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         canDodge = false;
         
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         canDodge = true;    
           
         
