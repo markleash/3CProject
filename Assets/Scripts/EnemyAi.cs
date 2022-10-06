@@ -10,6 +10,7 @@ public class EnemyAi : MonoBehaviour
     public float health;
     [SerializeField] private GameObject roundPrefab;
     public Gun gun;
+    
 
     //Patroling
     public Vector3 walkPoint;
@@ -99,6 +100,7 @@ public class EnemyAi : MonoBehaviour
         health -= damage;
 
         if (health <= 0) Invoke(nameof(DestroyEnemy), 0.5f);
+        
     }
     private void DestroyEnemy()
     {
